@@ -12,7 +12,7 @@
 
 ## 網址
 
-wineshop-platform.vercel.app
+[wineshop-platform.vercel.app](https://wineshop-platform.vercel.app/)
 
 ## 核心價值
 
@@ -117,6 +117,88 @@ wineshop-platform/
 1. 使用 [CodePen](https://codepen.io/) 或 [JSFiddle](https://jsfiddle.net/)
 2. 將 HTML 貼入編輯器
 3. 圖片使用線上圖床（如 Imgur、Unsplash）
+
+## 瀏覽器支援
+
+### 完整支援
+
+| 瀏覽器 | 版本 | 說明 |
+|--------|------|------|
+| Chrome |  90+ | 完整支援所有功能 |
+| Firefox |  88+ | 完整支援所有功能 |
+| Safari |  14+ | 完整支援所有功能 |
+| Edge |  90+ | 完整支援所有功能 |
+| Opera |  76+ | 完整支援所有功能 |
+
+### 部分支援
+
+| 瀏覽器 | 版本 | 說明 |
+|--------|------|------|
+| Safari |  13 | backdrop-filter 需要加前綴 |
+| iOS Safari |  13+ | 部分毛玻璃效果可能不顯示 |
+
+### 不支援
+
+| 瀏覽器 | 說明 |
+|--------|------|
+| IE 11 |  不支援 CSS Grid, Flexbox gap |
+| IE 10 及以下 |  完全不支援 |
+
+### 功能相容性
+
+```
+ CSS Grid Layout          (所有現代瀏覽器)
+ Flexbox                  (所有現代瀏覽器)
+ CSS Transform/Transition (所有現代瀏覽器)
+ Filter 濾鏡              (所有現代瀏覽器)
+ Backdrop-filter         (Safari 需要 -webkit- 前綴)
+ object-fit               (所有現代瀏覽器)
+ ES6 JavaScript          (所有現代瀏覽器)
+```
+
+## 注意事項
+
+### 1. 圖片資源
+
+**必須準備圖片檔案**
+```
+ 錯誤：沒有準備圖片 → 頁面顯示空白或破圖
+ 正確：準備 6 張圖片放入 assets/ 資料夾
+```
+
+**圖片命名規則**
+- 嚴格遵循檔名：`hero.jpg`, `edm-header.jpg`, `product1.jpg` 等
+- 大小寫敏感（Linux/Mac）
+- 不可使用空格或特殊字元
+
+### 2. Material Icons
+
+**需要網路連線**
+```html
+<!-- 此行需要網路載入 -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
+
+**離線使用方案：**
+1. 下載 Material Icons 字體檔
+2. 自行託管（self-hosted）
+3. 或改用 SVG 圖示
+
+### 3. 本地開啟限制
+
+**檔案協定限制（file://）**
+-  某些瀏覽器可能阻擋本地圖片載入
+-  建議使用本地伺服器（Live Server、http-server）
+
+### 4. 效能考量
+
+**圖片優化建議**
+```
+- 使用 WebP 格式（更小的檔案大小）
+- 壓縮圖片（TinyPNG、ImageOptim）
+- 設定適當的尺寸（避免載入過大圖片）
+- 考慮使用 lazy loading
+```
 
 ## 版權聲明
 
