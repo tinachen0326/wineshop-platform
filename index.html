@@ -300,9 +300,26 @@
         /* Product Grid */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
             margin-bottom: 60px;
+            /* 手機預設 1 欄 */
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        /* 平板 2 欄 (≥600px) */
+        @media (min-width: 600px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* 桌機 3 欄 (≥992px) */
+        @media (min-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
         }
 
         .product-card {
@@ -709,9 +726,15 @@
                 font-size: 2.2rem;
             }
 
+            /* 手機固定 1 欄卡片樣式（每張卡片寬度 100%） */
             .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-                gap: 15px;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 16px;
+            }
+
+            /* 可選：手機卡片的圖片高度略降，讓卡片更適合窄螢幕 */
+            .product-image-wrapper {
+                height: 220px;
             }
 
             .category-container {
@@ -930,6 +953,64 @@
                                 <span class="sale-price">$2,399</span>
                             </div>
                             <span class="discount-tag">-25%</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入購物車</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 (新增) -->
+                <div class="product-card">
+                    <div class="product-badge">熱銷</div>
+                    <button class="wishlist-btn">♡</button>
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="assets/product5.jpg" alt="澳洲希拉紅酒">
+                        <div class="quick-view">快速查看</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">澳洲希拉紅酒</h3>
+                        <div class="product-meta">
+                            <span class="meta-tag">750ml</span>
+                            <span class="meta-tag">2019</span>
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(74)</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price-group">
+                                <span class="original-price">$1,200</span>
+                                <span class="sale-price">$899</span>
+                            </div>
+                            <span class="discount-tag">-25%</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入購物車</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 (新增) -->
+                <div class="product-card">
+                    <div class="product-badge">尊榮香檳</div>
+                    <button class="wishlist-btn">♡</button>
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="assets/product6.jpg" alt="法國香檳">
+                        <div class="quick-view">快速查看</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">法國香檳（經典年份）</h3>
+                        <div class="product-meta">
+                            <span class="meta-tag">750ml</span>
+                            <span class="meta-tag">2016</span>
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(312)</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price-group">
+                                <span class="original-price">$4,500</span>
+                                <span class="sale-price">$3,199</span>
+                            </div>
+                            <span class="discount-tag">-29%</span>
                         </div>
                         <button class="add-to-cart-btn">加入購物車</button>
                     </div>
