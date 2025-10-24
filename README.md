@@ -189,10 +189,10 @@ wineshop-platform/
 
 **圖片優化建議**
 ```
-- 使用 WebP 格式（更小的檔案大小）
-- 壓縮圖片（TinyPNG、ImageOptim）
-- 設定適當的尺寸（避免載入過大圖片）
-- 考慮使用 lazy loading
+使用 WebP 格式（更小的檔案大小）
+壓縮圖片（TinyPNG、ImageOptim）
+設定適當的尺寸（避免載入過大圖片）
+考慮使用 lazy loading
 ```
 
 ## 致謝
