@@ -58,7 +58,6 @@ wineshop-platform/
 │
 ├── index.html             # 主頁面（Single Page Application）
 ├── README.md              # 專案說明文件
-├── LICENSE                # MIT 授權條款
 │
 └── assets/                # 圖片資源目錄 必要
     ├── hero.jpg           # Hero Banner 背景圖
