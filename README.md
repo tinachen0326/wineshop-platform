@@ -82,7 +82,7 @@ wineshop-platform/
 1. **下載專案**
    ```bash
    # 下載 ZIP 或 Clone 專案
-   git clone [https://github.com/yourusername/wine-festival-72hours.git](https://github.com/tinachen0326/wineshop-platform.git)
+   git clone https://github.com/tinachen0326/wineshop-platform.git
    cd wineshop-platform
    ```
 
@@ -149,10 +149,10 @@ wineshop-platform/
  CSS Grid Layout          (所有現代瀏覽器)
  Flexbox                  (所有現代瀏覽器)
  CSS Transform/Transition (所有現代瀏覽器)
- Filter 濾鏡              (所有現代瀏覽器)
- Backdrop-filter         (Safari 需要 -webkit- 前綴)
- object-fit               (所有現代瀏覽器)
- ES6 JavaScript          (所有現代瀏覽器)
+ Filter 濾鏡　　　　　　　　(所有現代瀏覽器)              
+ Backdrop-filter   　　　　(Safari 需要 -webkit- 前綴) 　  　
+ object-fit　　　　　　　　(所有現代瀏覽器)
+ ES6 JavaScript         　(所有現代瀏覽器)
 ```
 
 ## 注意事項
