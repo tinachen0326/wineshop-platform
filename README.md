@@ -6,15 +6,15 @@
 [![Material Icons](https://img.shields.io/badge/Material_Icons-757575?style=for-the-badge&logo=google&logoColor=white)](https://fonts.google.com/icons)
 [![License](https://img.shields.io/badge/License-Personal_Use-blue?style=for-the-badge)](#版權聲明)
 
-##　專案簡介
+## 專案簡介
 
 這是一個為「新酒節限時 72 小時」活動設計的完整電商網頁，整合了真實商品圖片與現代化的 UI 設計。專案採用純前端技術實現，無需後端即可展示完整的電商頁面效果。
 
-##　網址
+## 網址
 
 wineshop-platform.vercel.app
 
-##　核心價值
+## 核心價值
 
 - **真實圖片素材**：使用實際商品圖片提升視覺真實感
 - **Material Design Icons**：Google Material Icons 提供專業圖示系統
@@ -22,9 +22,9 @@ wineshop-platform.vercel.app
 - **純前端實現**：無需後端，開箱即用
 - **豐富互動效果**：Hover、動畫、即時回饋
 
-##　技術架構
+## 技術架構
 
-###　核心技術
+### 核心技術
 ```
 ├── HTML5
 │   ├── 語意化標籤（header, nav, main, section, footer）
@@ -43,7 +43,7 @@ wineshop-platform.vercel.app
     └── 互動動畫控制
 ```
 
-###　外部資源
+### 外部資源
 - **Google Material Icons**
   ```html
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -51,7 +51,7 @@ wineshop-platform.vercel.app
 - **Google Fonts (Noto Sans TC)**
   - 預設字體家族：`'Noto Sans TC', -apple-system, sans-serif`
 
-##　專案結構
+## 專案結構
 
 ```
 wineshop-platform/
@@ -69,7 +69,7 @@ wineshop-platform/
     └── product4.jpg       # 商品 4：蘇格蘭單一麥芽威士忌
 ```
 
-##　安裝與啟動
+## 安裝與啟動
 
 ### 前置需求
 - 現代瀏覽器（Chrome 90+, Firefox 88+, Safari 14+）
