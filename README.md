@@ -193,6 +193,21 @@ wineshop-platform/
 - 考慮使用 lazy loading
 ```
 
+## 致謝
+
+### 設計靈感
+- 參考現代電商網站設計趨勢
+- Material Design 設計語言
+
+### 技術資源
+- [Google Material Icons](https://fonts.google.com/icons) - 圖示系統
+- [Google Fonts](https://fonts.google.com/) - Noto Sans TC 字體
+- [MDN Web Docs](https://developer.mozilla.org/) - 技術文件
+
+### 社群支持
+- 感謝所有提供回饋與建議的使用者
+- 感謝所有 Contributors 的貢獻
+  
 **法律聲明**  
 依據法律規定，未滿 18 歲者，禁止購買及飲用酒類。  
 請理性飲酒，酒後不開車，安全有保障。
