@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>新酒節限時72小時 | 酒品電商</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-bar {
+            background: #6B1E3C;
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #6B1E3C;
+            text-decoration: none;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #6B1E3C;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #6B1E3C;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-icon {
+            text-decoration: none;
+            color: #333;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-icon .material-icons {
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-icon:hover .material-icons {
+            color: #6B1E3C;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #FF4757;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: none;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.55);
+            transform: scale(1.02);
+        }
+
+        .hero-banner::before {
+            display: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            max-width: 1000px;
+        }
+
+        .event-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .countdown-banner {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .countdown-num {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-text {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: white;
+            color: #6B1E3C;
+            padding: 16px 45px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Category Navigation */
+        .category-nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .category-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+        }
+
+        .category-item {
+            text-align: center;
+            min-width: 100px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .category-name {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .view-all {
+            color: #6B1E3C;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(107, 30, 60, 0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, #FF6B6B, #FF4757);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 3px 10px rgba(255, 71, 87, 0.4);
+        }
+
+        .wishlist-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .wishlist-btn:hover {
+            background: #FF4757;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .product-image-wrapper {
+            height: 280px;
+            background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            display: block;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        .quick-view {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%) translateY(50px);
+            background: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            color: #6B1E3C;
+        }
+
+        .product-card:hover .quick-view {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+            display: -webkit-box;
+            /* -webkit-line-clamp: 2; */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.85rem;
+            color: #666;
+            background: #f5f5f5;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 12px;
+        }
+
+        .stars {
+            color: #FFB800;
+            font-size: 0.9rem;
+        }
+
+        .review-count {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .price-group {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .original-price {
+            font-size: 0.95rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .sale-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #6B1E3C;
+        }
+
+        .discount-tag {
+            background: #FF4757;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            background: #6B1E3C;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-to-cart-btn:hover {
+            background: #8B2E4E;
+            transform: scale(1.02);
+        }
+
+        /* EDM Preview Section */
+        .edm-preview-section {
+            background: white;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .edm-preview-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .edm-preview-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .edm-preview-subtitle {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .edm-mockup {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .edm-header {
+            background: url('assets/edm-header.jpg') center/cover no-repeat;
+            padding: 50px 40px;
+            color: white;
+            position: relative;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* EDM 覆蓋層 */
+        .edm-header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            /* 可調整顏色或透明度 */
+            z-index: 1;
+        }
+
+        /* 使內部內容位於覆蓋層上方 */
+        .edm-header>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .edm-header::before {
+            content: '🍷';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 50px;
+            opacity: 0.12;
+        }
+
+        .edm-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .edm-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .edm-subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-bottom: 25px;
+        }
+
+        .edm-countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .edm-countdown-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 18px;
+            border-radius: 8px;
+        }
+
+        .edm-countdown-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: block;
+            line-height: 1;
+        }
+
+        .edm-countdown-label {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+
+        .edm-cta-btn {
+            display: inline-block;
+            background: white;
+            color: #6B1E3C;
+            padding: 14px 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .edm-cta-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 50px 20px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            .search-bar {
+                order: 3;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero-banner {
+                height: 400px;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 15px;
+            }
+
+            .category-container {
+                gap: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            🔥 新酒節限時72小時！全館精選酒款最高7折優惠 | 滿$2000免運
+        </div>
+        <nav class="nav-container">
+            <a href="#" class="logo">WineShop</a>
+            <div class="search-bar">
+                <input type="text" placeholder="搜尋酒款、品牌、產地...">
+                <button>搜尋</button>
+            </div>
+            <div class="nav-icons">
+                <a href="#" class="nav-icon">
+                    <span class="material-icons">person</span>
+                </a>
+                <a href="#" class="nav-icon">
+                    <span class="material-icons">favorite</span>
+                </a>
+                <a href="#" class="nav-icon">
+                    <span class="material-icons">shopping_cart</span>
+                    <span class="cart-badge">3</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <img class="hero-bg" src="assets/hero.jpg" alt="新酒節 Banner">
+        <div class="hero-content">
+            <div class="event-badge">WINE FESTIVAL 2025</div>
+            <h1 class="hero-title">新酒節限時 72 小時</h1>
+            <p class="hero-subtitle">精選國際頂級酒款 · 限時優惠最高7折</p>
+
+            <div class="countdown-banner">
+                <div class="countdown-box">
+                    <span class="countdown-num">48</span>
+                    <span class="countdown-text">小時</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num">23</span>
+                    <span class="countdown-text">分鐘</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num">15</span>
+                    <span class="countdown-text">秒</span>
+                </div>
+            </div>
+
+            <a href="#products" class="hero-cta">立即選購 →</a>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <section class="category-nav">
+        <div class="category-container">
+            <div class="category-item">
+                <div class="category-icon"></div>
+                <div class="category-name">紅酒</div>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"></div>
+                <div class="category-name">白酒</div>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"></div>
+                <div class="category-name">氣泡酒</div>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"></div>
+                <div class="category-name">威士忌</div>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"></div>
+                <div class="category-name">琴酒</div>
+            </div>
+            <div class="category-item">
+                <div class="category-icon"></div>
+                <div class="category-name">禮盒組</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Products Section -->
+        <section id="products">
+            <div class="section-header">
+                <h2 class="section-title">限時熱賣</h2>
+                <a href="#" class="view-all">查看全部 →</a>
+            </div>
+
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">限時組合</div>
+                    <button class="wishlist-btn">♡</button>
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="assets/product1.jpg" alt="法國波爾多紅酒雙瓶組">
+                        <div class="quick-view">快速查看</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">法國波爾多紅酒雙瓶組</h3>
+                        <div class="product-meta">
+                            <span class="meta-tag">750ml × 2</span>
+                            <span class="meta-tag">2018</span>
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(128)</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price-group">
+                                <span class="original-price">$3,600</span>
+                                <span class="sale-price">$2,499</span>
+                            </div>
+                            <span class="discount-tag">-31%</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入購物車</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">人氣推薦</div>
+                    <button class="wishlist-btn">♡</button>
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="assets/product2.jpg" alt="義大利經典氣泡酒">
+                        <div class="quick-view">快速查看</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">義大利經典氣泡酒</h3>
+                        <div class="product-meta">
+                            <span class="meta-tag">750ml</span>
+                            <span class="meta-tag">2020</span>
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(89)</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price-group">
+                                <span class="original-price">$1,800</span>
+                                <span class="sale-price">$1,299</span>
+                            </div>
+                            <span class="discount-tag">-28%</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入購物車</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">送禮首選</div>
+                    <button class="wishlist-btn">♡</button>
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="assets/product3.jpg" alt="西班牙珍藏陳年紅酒">
+                        <div class="quick-view">快速查看</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">西班牙珍藏陳年紅酒</h3>
+                        <div class="product-meta">
+                            <span class="meta-tag">750ml</span>
+                            <span class="meta-tag">2015</span>
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(156)</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price-group">
+                                <span class="original-price">$2,400</span>
+                                <span class="sale-price">$1,799</span>
+                            </div>
+                            <span class="discount-tag">-25%</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入購物車</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">新品上市</div>
+                    <button class="wishlist-btn">♡</button>
+                    <div class="product-image-wrapper">
+                        <img class="product-image" src="assets/product4.jpg" alt="蘇格蘭單一麥芽威士忌">
+                        <div class="quick-view">快速查看</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">蘇格蘭單一麥芽威士忌</h3>
+                        <div class="product-meta">
+                            <span class="meta-tag">700ml</span>
+                            <span class="meta-tag">12年</span>
+                        </div>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(203)</span>
+                        </div>
+                        <div class="price-row">
+                            <div class="price-group">
+                                <span class="original-price">$3,200</span>
+                                <span class="sale-price">$2,399</span>
+                            </div>
+                            <span class="discount-tag">-25%</span>
+                        </div>
+                        <button class="add-to-cart-btn">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDM Preview Section -->
+        <section class="edm-preview-section">
+            <div class="edm-preview-container">
+                <h2 class="edm-preview-title">EDM 首屏預覽</h2>
+                <!-- <p class="edm-preview-subtitle">適用於電子報、行銷郵件</p> -->
+
+                <div class="edm-mockup">
+                    <div class="edm-header">
+                        <div class="edm-badge">LIMITED TIME OFFER</div>
+                        <h1 class="edm-title">新酒節<br />限時 72 小時</h1>
+                        <p class="edm-subtitle">精選頂級酒款 · 全館限時優惠</p>
+
+                        <div class="edm-countdown">
+                            <div class="edm-countdown-box">
+                                <span class="edm-countdown-number">48</span>
+                                <span class="edm-countdown-label">小時</span>
+                            </div>
+                            <div class="edm-countdown-box">
+                                <span class="edm-countdown-number">23</span>
+                                <span class="edm-countdown-label">分鐘</span>
+                            </div>
+                            <div class="edm-countdown-box">
+                                <span class="edm-countdown-number">15</span>
+                                <span class="edm-countdown-label">秒</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="edm-cta-btn">立即搶購 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>關於我們</h3>
+                <ul class="footer-links">
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">門市據點</a></li>
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>購物服務</h3>
+                <ul class="footer-links">
+                    <li><a href="#">購物流程</a></li>
+                    <li><a href="#">配送方式</a></li>
+                    <li><a href="#">退換貨政策</a></li>
+                    <li><a href="#">常見問題</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>會員專區</h3>
+                <ul class="footer-links">
+                    <li><a href="#">會員權益</a></li>
+                    <li><a href="#">紅利積點</a></li>
+                    <li><a href="#">訂單查詢</a></li>
+                    <li><a href="#">我的最愛</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>追蹤我們</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">LINE</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 WineShop. All rights reserved. | 依據法律規定，未滿18歲者，禁止購買及飲用酒類。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const countdownElements = document.querySelectorAll('.countdown-num, .edm-countdown-number');
+
+            let hours = 48;
+            let minutes = 23;
+            let seconds = 15;
+
+            setInterval(() => {
+                seconds--;
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        if (hours < 0) {
+                            hours = 0;
+                            minutes = 0;
+                            seconds = 0;
+                        }
+                    }
+                }
+
+                document.querySelectorAll('.countdown-num').forEach((el, index) => {
+                    if (index === 0) el.textContent = String(hours).padStart(2, '0');
+                    if (index === 1) el.textContent = String(minutes).padStart(2, '0');
+                    if (index === 2) el.textContent = String(seconds).padStart(2, '0');
+                });
+
+                document.querySelectorAll('.edm-countdown-number').forEach((el, index) => {
+                    if (index === 0) el.textContent = String(hours).padStart(2, '0');
+                    if (index === 1) el.textContent = String(minutes).padStart(2, '0');
+                    if (index === 2) el.textContent = String(seconds).padStart(2, '0');
+                });
+            }, 1000);
+        }
+
+        updateCountdown();
+
+        // Wishlist toggle
+        document.querySelectorAll('.wishlist-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                this.textContent = this.textContent === '♡' ? '❤️' : '♡';
+            });
+        });
+
+        // Add to cart animation
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const originalText = this.innerHTML;
+                this.innerHTML = '✓ 已加入';
+                this.style.background = '#28a745';
+
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.background = '#6B1E3C';
+                }, 1500);
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
