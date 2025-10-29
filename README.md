@@ -12,7 +12,7 @@
 - 依據法律規定，未滿 18 歲者，禁止購買及飲用酒類。  
 - 請理性飲酒，酒後不開車，安全有保障。
 
-## 網址
+## 專案網址
 
 [wineshop-platform.vercel.app](https://wineshop-platform.vercel.app/)
 
