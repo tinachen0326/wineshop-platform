@@ -574,18 +574,16 @@
             position: absolute;
             inset: 0;
             background: rgba(0, 0, 0, 0.35);
-            /* 可調整顏色或透明度 */
             z-index: 1;
         }
 
-        /* 使內部內容位於覆蓋層上方 */
         .edm-header>* {
             position: relative;
             z-index: 2;
         }
 
         .edm-header::before {
-            content: '🍷';
+            content: '';
             position: absolute;
             top: 15px;
             right: 15px;
@@ -1177,3 +1175,4 @@
 </body>
 
 </html>
+
